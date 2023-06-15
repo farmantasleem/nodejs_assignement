@@ -5,13 +5,7 @@ import { User } from "./Pages/User";
 function App() {
   return (
     <div className="parent">
-      <header>
-        <button>Home</button>
-        <button>Blog</button>
-        <button>About</button>
-      </header>
-      
-      <User/>
+    
       <main>
 
       <div className="storyCard">
