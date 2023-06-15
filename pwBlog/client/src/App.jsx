@@ -1,5 +1,6 @@
 import "./App.css";
 import { Addblog } from "./Pages/AddBlog";
+import { User } from "./Pages/User";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
         <button>Blog</button>
         <button>About</button>
       </header>
-      <Addblog/>
+      
+      <User/>
       <main>
 
       <div className="storyCard">

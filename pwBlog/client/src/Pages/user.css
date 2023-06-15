@@ -1,0 +1,30 @@
+#user{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgb(57,57,57);
+    color: white;
+    justify-content: center;
+    text-align: center;  
+    width: 300px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#user input{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#user button{
+    color: white;
+    background-color: rgb(236,79,47);
+}
+
+button{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
