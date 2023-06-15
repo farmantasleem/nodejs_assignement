@@ -56,6 +56,14 @@ body{
   height: 200px;
 }
 
+#welcome{
+  position: absolute;
+  top: 40px;
+  background-color: rgb(36,194,148);
+  color: white;
+  right: 20px;
+}
+
 .storyCard p{
   max-height: 100px;
   overflow: hidden;
