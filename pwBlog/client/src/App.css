@@ -1,0 +1,62 @@
+header{
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+  gap: 40px;
+  justify-content: center;
+  background-color: rgb(40,40,40);
+  color: white;
+}
+
+header button{
+  width: 120px;
+  background-color:black;
+  height: 40px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+main{
+  display: grid;
+  grid-template-columns: 340px 340px 340px;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+}
+body{
+  background-color: black;
+}
+.storyCard{
+  width: 300px;
+  background-color: rgb(40,40,40);
+  color: silver;
+  height: 430px;
+  font-size: 17px;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  justify-content: center;
+}
+.storyCard button{
+  background-color: rgb(236,81,49);
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+}
+.storyCard *{
+  font-size: 17px;
+}
+.storyCard img{
+  width: 200px;
+  height: 200px;
+}
+
+.storyCard p{
+  max-height: 100px;
+  overflow: hidden;
+}
