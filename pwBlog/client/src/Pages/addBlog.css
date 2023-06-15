@@ -1,0 +1,28 @@
+#main{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgb(38,38,38);
+    gap: 10px;
+}
+
+#main input,#main button{
+    border: none;
+    height: 30px;
+    padding: 5px;
+}
+textarea{
+    padding: 10px;
+}
+
+#main button{
+    cursor: pointer;
+    background-color: rgb(242,109,73);
+    color: white;
+}
+#main h1{
+    color: rgb(242,109,73);
+}
