@@ -1,0 +1,92 @@
+[
+    {
+      "id": "1",
+      "name": "Women's Dress",
+      "brand": "ABC",
+      "price": 59.99,
+      "color": "Red",
+      "size": "S",
+      "category": "Clothing"
+    },
+    {
+      "id": "2",
+      "name": "Women's Handbag",
+      "brand": "XYZ",
+      "price": 89.99,
+      "color": "Black",
+      "size": "One Size",
+      "category": "Accessories"
+    },
+    {
+      "id": "3",
+      "name": "Women's Sneakers",
+      "brand": "PQR",
+      "price": 79.99,
+      "color": "White",
+      "size": "8",
+      "category": "Shoes"
+    },
+    {
+      "id": "4",
+      "name": "Women's Blouse",
+      "brand": "LMN",
+      "price": 34.99,
+      "color": "Blue",
+      "size": "M",
+      "category": "Clothing"
+    },
+    {
+      "id": "5",
+      "name": "Women's Watch",
+      "brand": "ABC",
+      "price": 109.99,
+      "color": "Rose Gold",
+      "size": "One Size",
+      "category": "Accessories"
+    },
+    {
+      "id": "6",
+      "name": "Women's Sandals",
+      "brand": "XYZ",
+      "price": 49.99,
+      "color": "Brown",
+      "size": "7",
+      "category": "Shoes"
+    },
+    {
+      "id": "7",
+      "name": "Women's Skirt",
+      "brand": "PQR",
+      "price": 39.99,
+      "color": "Black",
+      "size": "L",
+      "category": "Clothing"
+    },
+    {
+      "id": "8",
+      "name": "Women's Sunglasses",
+      "brand": "LMN",
+      "price": 69.99,
+      "color": "Tortoise",
+      "size": "One Size",
+      "category": "Accessories"
+    },
+    {
+      "id": "9",
+      "name": "Women's Jeans",
+      "brand": "ABC",
+      "price": 49.99,
+      "color": "Dark Wash",
+      "size": "M",
+      "category": "Clothing"
+    },
+    {
+      "id": "10",
+      "name": "Women's Earrings",
+      "brand": "XYZ",
+      "price": 29.99,
+      "color": "Silver",
+      "size": "One Size",
+      "category": "Accessories"
+    }
+  ]
