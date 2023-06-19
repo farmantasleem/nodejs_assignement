@@ -1,0 +1,94 @@
+[
+      {
+        "id": "1",
+        "name": "Men's T-Shirt",
+        "brand": "ABC",
+        "price": 19.99,
+        "color": "Blue",
+        "size": "M",
+        "category": "Clothing"
+      },
+      {
+        "id": "2",
+        "name": "Men's Jeans",
+        "brand": "XYZ",
+        "price": 49.99,
+        "color": "Black",
+        "size": "L",
+        "category": "Clothing"
+      },
+      {
+        "id": "3",
+        "name": "Men's Sneakers",
+        "brand": "PQR",
+        "price": 79.99,
+        "color": "White",
+        "size": "10",
+        "category": "Shoes"
+      },
+      {
+        "id": "4",
+        "name": "Men's Hoodie",
+        "brand": "LMN",
+        "price": 39.99,
+        "color": "Gray",
+        "size": "XL",
+        "category": "Clothing"
+      },
+      {
+        "id": "5",
+        "name": "Men's Watch",
+        "brand": "ABC",
+        "price": 99.99,
+        "color": "Silver",
+        "size": "One Size",
+        "category": "Accessories"
+      },
+      {
+        "id": "6",
+        "name": "Men's Belt",
+        "brand": "XYZ",
+        "price": 29.99,
+        "color": "Brown",
+        "size": "32",
+        "category": "Accessories"
+      },
+      {
+        "id": "7",
+        "name": "Men's Shorts",
+        "brand": "PQR",
+        "price": 24.99,
+        "color": "Navy",
+        "size": "S",
+        "category": "Clothing"
+      },
+      {
+        "id": "8",
+        "name": "Men's Sunglasses",
+        "brand": "LMN",
+        "price": 59.99,
+        "color": "Black",
+        "size": "One Size",
+        "category": "Accessories"
+      },
+      {
+        "id": "9",
+        "name": "Men's Dress Shirt",
+        "brand": "ABC",
+        "price": 34.99,
+        "color": "White",
+        "size": "L",
+        "category": "Clothing"
+      },
+      {
+        "id": "10",
+        "name": "Men's Joggers",
+        "brand": "XYZ",
+        "price": 44.99,
+        "color": "Black",
+        "size": "M",
+        "category": "Clothing"
+      }
+    ]
+ 
+  
