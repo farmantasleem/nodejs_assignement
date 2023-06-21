@@ -2,7 +2,7 @@ const express = require("express");
 const { loginValidate } = require("../middlerwares/loginValidate");
 const { Usermodel } = require("../model/User.model");
 const { registerValidate } = require("../middlerwares/registerValidate");
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const userRoute = express.Router();
 
 // route for login
@@ -11,10 +11,10 @@ userRoute.post("/login", loginValidate, async (req, res) => {
 
   const userData = await Usermodel.findOne({ email });
 
-  if (userData) {
+  if (userData&&userData.password?.length>0) {
     if (userData.password == password) {
       res.status(200).send({ msg: "Login Success", userId: userData._id });
-    } else {
+    } else  {
       res.status(401).send({ msg: "Wrong Password" });
     }
   } else {
@@ -29,9 +29,12 @@ userRoute.post("/register",registerValidate,async(req,res)=>{
     const {name,email,password} = req.body;
   
     try {
-        await Usermodel.insertOne({name,email,password});
+       const data= await new Usermodel({name,email,password});
+       await data.save()
         res.status(200).send({msg:"Registed Successfully"});
     } catch (error) {
         res.status(404).send({msg:error.message});
     }
 })
+
+module.exports = userRoute;
