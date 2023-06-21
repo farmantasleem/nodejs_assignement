@@ -42,6 +42,8 @@ blogRoute.delete("/:id",AuthenticateAuthor,async(req,res)=>{
         const userId=req.headers.authorization.split(" ")[1];
 
         try{
+            await Blogmodel.findOneAndDelete({_id:blogId})
+            res.status(200).send({msg:"Blog Deleted Successfully"})
 
         }catch(err){
             res.status(501).send({msg:err.message})
@@ -52,8 +54,18 @@ blogRoute.delete("/:id",AuthenticateAuthor,async(req,res)=>{
 
 
 
-//delete blog
-
-
 //update blog
 
+blogRoute.delete("/:id",AuthenticateAuthor,async(req,res)=>{
+    const blogId = req.params.id;
+    const userId=req.headers.authorization.split(" ")[1];
+
+    try{
+        await Blogmodel.findOneandUpdate({_id:blogId},{...req.body})
+        res.status(200).send({msg:"Blog Update Successfully"})
+
+    }catch(err){
+        res.status(501).send({msg:err.message})
+    }
+
+})
