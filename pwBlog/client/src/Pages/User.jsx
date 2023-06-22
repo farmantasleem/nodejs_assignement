@@ -1,13 +1,28 @@
 import React, { useState } from "react";
 
 import "./user.css"
+import { Error } from "../Component/popup/Error";
+
 
 export  const User=()=>{
     const[register,setregister]=useState(false)
     const[user,setUser]=useState({name:"",email:"",password:""})
+    const HOST="http://localhost:8081"
 
-    const handleClick = () => {
-            console.log(user)
+    const handleClick = async() => {
+   
+            const resp=await fetch(`${HOST}/user/${register?"register":"login"}`,{
+                method:"POST",
+                headers:{"content-type":"application/json"},
+                body:JSON.stringify(user)
+            }) 
+
+            const data=await resp.json();
+            if(resp.status=="200" && data?.userId){
+                localStorage.setItem("userId",data.userId)
+            }
+            alert(data.msg)
+      
     }
 
     return(
@@ -18,6 +33,7 @@ export  const User=()=>{
                 <input type="text"  value={user.password} placeholder="Password" onChange={e=>{setUser({...user,password:e.target.value})}}/>
                 
                 <button onClick={handleClick}>Submit</button>
+              
 
                 <p>Don't have account?  <span onClick={()=>{setregister(!register)}} style={{cursor:"pointer",color:"rgb(236,79,47)"}}>{!register?"Register":"Login"}</span></p>
         </div>

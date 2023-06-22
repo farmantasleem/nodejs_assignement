@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./addBlog.css"
+import { Error } from "../Component/popup/Error";
 
 export const Addblog=()=>{
     const[story,setstory]=useState({title:"",desc:"",img:"",content:""})
@@ -15,7 +16,8 @@ export const Addblog=()=>{
             <input type="text" placeholder="Type Short Description for your Blog"  value={story.desc} onChange={e=>setstory({...story,desc:e.target.value})} />
 
             <textarea name="" id="" cols="30" rows="5" placeholder="Type Your Blog"  value={story.content} onChange={e=>setstory({...story,content:e.target.value})}></textarea>   
-            <button onClick={handleClick}>Publish Blog</button>         
+            <button onClick={handleClick}>Publish Blog</button> 
+            <Error/>        
             </div>
     )
 }

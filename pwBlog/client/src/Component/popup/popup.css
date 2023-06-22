@@ -1,0 +1,33 @@
+#error{
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px;
+    font-size: 13px;
+    right: 40px;
+   
+}
+
+#error h1{
+    font-size: 11px;
+    color: white;
+}
+
+#success{
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px;
+    font-size: 13px;
+    right: 40px;
+   
+}
+
+#success h1{
+    font-size: 11px;
+    color: white;
+}

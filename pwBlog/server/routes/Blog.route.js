@@ -7,15 +7,17 @@ const { Blogmodel } = require("../model/Blog.model");
 const { blogValidate } = require("../middlerwares/blogValidate");
 const blogRoute = express.Router();
 const {AuthenticateAuthor} =require("../middlerwares/authenticateAuthor")
+const {userValidation} = require("../middlerwares/userValidation")
 
 
 // create/add blog
 
-blogRoute.post("/add",blogValidate,async(req,res)=>{
+blogRoute.post("/add",[blogValidate,userValidation],async(req,res)=>{
 
     try {
         const newBlog = await new Blogmodel({...req.body});
         await newBlog.save()
+        res.status(200).send({msg:"Blog Added Successfully"})
     } catch (error) {
         res.status(501).send({msg:error.message})
     }
@@ -52,20 +54,19 @@ blogRoute.delete("/:id",AuthenticateAuthor,async(req,res)=>{
 })
 
 
-
-
 //update blog
 
-blogRoute.delete("/:id",AuthenticateAuthor,async(req,res)=>{
+blogRoute.patch("/:id",AuthenticateAuthor,async(req,res)=>{
     const blogId = req.params.id;
-    const userId=req.headers.authorization.split(" ")[1];
+    const userId=req.headers?.authorization.split(" ")[1];
 
     try{
-        await Blogmodel.findOneandUpdate({_id:blogId},{...req.body})
+        await Blogmodel.findOneAndUpdate({_id:blogId},{...req.body})
         res.status(200).send({msg:"Blog Update Successfully"})
-
     }catch(err){
         res.status(501).send({msg:err.message})
     }
 
 })
+
+module.exports ={blogRoute}
