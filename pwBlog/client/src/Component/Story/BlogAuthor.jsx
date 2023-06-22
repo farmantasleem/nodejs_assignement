@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { EditModal } from "./EditModal";
 
 
 export const BlogAuthor = () => {
+  const[edit,setEdit]=useState(true)
         return(
             <div className="storyCard">
             <img src="https://img.staticmb.com/mbcontent/images/uploads/2022/7/Image-of-colorful-sky-from-nandi-hills-bangalore.jpg" alt="" />
@@ -16,8 +18,9 @@ export const BlogAuthor = () => {
               </p>
               <div id="blogButton">
                   <button>Read</button>
-                  <button>Edit</button>
+                  <button onClick={()=>{setEdit(false)}}>Edit</button>
               </div>
+              <EditModal edit={edit} setEdit={setEdit}/>
             </div>
           </div>
         )

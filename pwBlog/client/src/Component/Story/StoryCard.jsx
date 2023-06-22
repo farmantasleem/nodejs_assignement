@@ -1,4 +1,5 @@
 import React from "react";
+import { EditModal } from "./EditModal";
 
 
 export const StoryCard = () => {
@@ -16,6 +17,7 @@ export const StoryCard = () => {
               </p>
               <button>Read</button>
             </div>
+        
           </div>
         )
 }
