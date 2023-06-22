@@ -14,8 +14,10 @@ export const BlogAuthor = () => {
                 molestias eaque exercitationem. Excepturi quidem eveniet mollitia
                 ad dolorem iste.
               </p>
-              <button>Read</button>
-              <button>Edit</button>
+              <div id="blogButton">
+                  <button>Read</button>
+                  <button>Edit</button>
+              </div>
             </div>
           </div>
         )

@@ -2,14 +2,15 @@ import React from "react";
 import { StoryCard } from "../Component/Story/StoryCard";
 
 import "./myblog.css";
+import { BlogAuthor } from "../Component/Story/BlogAuthor";
 
-export const MyBlog = ()=>{
+export const BlogPage = ()=>{
         return(
             <div id="myBlog">
-                <StoryCard/>
-                <StoryCard/>
-                <StoryCard/>
-                <StoryCard/>
+              <BlogAuthor/>
+              <BlogAuthor/>
+              <BlogAuthor/>
+              <BlogAuthor/>
                 
             </div>
         )
