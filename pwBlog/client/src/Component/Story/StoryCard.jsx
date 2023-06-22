@@ -1,5 +1,6 @@
 import React from "react";
 import { EditModal } from "./EditModal";
+import { NavLink } from "react-router-dom";
 
 
 export const StoryCard = () => {
@@ -15,7 +16,7 @@ export const StoryCard = () => {
                 molestias eaque exercitationem. Excepturi quidem eveniet mollitia
                 ad dolorem iste.
               </p>
-              <button>Read</button>
+             <NavLink to={"/read"}> <button>Read</button></NavLink>
             </div>
         
           </div>

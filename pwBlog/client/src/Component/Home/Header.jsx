@@ -17,6 +17,8 @@ export const Header = () => {
                 <button>Login/Register</button>
             </NavLink>
             <NavLink to={"/myblog"}><button>MyBlog</button></NavLink>
+        
+
             <button id="welcome">Welcome, Guest</button>
         </header>
     )

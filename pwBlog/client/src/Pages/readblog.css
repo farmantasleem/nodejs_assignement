@@ -1,0 +1,29 @@
+#Readblog{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+}
+
+#Readblog img{
+    height: 400px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+#authorDetails{
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    align-content: center;
+    gap: 0px;
+    justify-content: baseline;
+    
+}
+
+#authorDetails h1{
+    font-size: 18px;
+}
+#authorDetails *{
+    margin: 0px;
+}

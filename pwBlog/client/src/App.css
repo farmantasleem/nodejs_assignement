@@ -32,13 +32,16 @@ body{
   width: 300px;
   background-color: rgb(40,40,40);
   color: silver;
-  height: 470px;
+  height: 430px;
   font-size: 17px;
   overflow: hidden;
   text-align: center;
   border-radius: 10px;
   padding: 10px;
   justify-content: center;
+}
+.myBlog{
+  height: 500px;
 }
 .storyCard button{
   background-color: rgb(236,81,49);
