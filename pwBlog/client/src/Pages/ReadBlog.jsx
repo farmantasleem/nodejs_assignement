@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./readblog.css"
+import { useParams } from "react-router-dom";
 
 export const ReadBlog = ()=>{
+    const data=useParams()
+    useEffect(()=>{
+        console.log(data)
+    },[])
     return(
         <div id="Readblog">
             <img src="https://img.staticmb.com/mbcontent/images/uploads/2022/7/Image-of-colorful-sky-from-nandi-hills-bangalore.jpg" alt="" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
@@ -7,9 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 import { Allroutes } from "./routes/Allroutes";
 import { Header } from "./Component/Home/Header";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <BrowserRouter>
-    <Header />
     <Allroutes />
   </BrowserRouter>
 );

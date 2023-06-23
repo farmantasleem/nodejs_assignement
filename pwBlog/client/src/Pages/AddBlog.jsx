@@ -4,9 +4,17 @@ import { Error } from "../Component/popup/Error";
 
 export const Addblog=()=>{
     const[story,setstory]=useState({title:"",desc:"",img:"",content:""})
+    const HOST="http://localhost:8081"
 
-    const handleClick = () => {
+    const handleClick = async() => {
         console.log(story)
+        const resp=await fetch(`${HOST}/blog/add`,{
+            method:"POST",
+            headers:{"content-type":"application/json","authorization":`bearer ${localStorage.getItem("userId")}`},
+            body:JSON.stringify({...story,author:localStorage.getItem("userId")})
+        })
+        const {msg}=await resp.json();
+        alert(msg)
     }
     return(
         <div id="main">
@@ -17,7 +25,6 @@ export const Addblog=()=>{
 
             <textarea name="" id="" cols="30" rows="5" placeholder="Type Your Blog"  value={story.content} onChange={e=>setstory({...story,content:e.target.value})}></textarea>   
             <button onClick={handleClick}>Publish Blog</button> 
-            <Error/>        
             </div>
     )
 }

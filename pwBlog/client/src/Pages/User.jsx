@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import "./user.css"
 import { Error } from "../Component/popup/Error";
+import { userInfo } from "../routes/Allroutes";
+import { useNavigate } from "react-router-dom";
 
 
 export  const User=()=>{
     const[register,setregister]=useState(false)
     const[user,setUser]=useState({name:"",email:"",password:""})
-    const HOST="http://localhost:8081"
+    const HOST="http://localhost:8081";
+    const {setlogin,login} = useContext(userInfo)
 
     const handleClick = async() => {
    
+          try{
             const resp=await fetch(`${HOST}/user/${register?"register":"login"}`,{
                 method:"POST",
                 headers:{"content-type":"application/json"},
@@ -20,10 +24,24 @@ export  const User=()=>{
             const data=await resp.json();
             if(resp.status=="200" && data?.userId){
                 localStorage.setItem("userId",data.userId)
+                setlogin(true)
+
             }
             alert(data.msg)
+          }catch(err){
+               alert(err.message)
+          }
+
+            
       
     }
+
+    const navigate=useNavigate()
+  React.useEffect(()=>{
+    if(login){
+    navigate("/")
+    }
+  },[login])
 
     return(
         <div id="user">
