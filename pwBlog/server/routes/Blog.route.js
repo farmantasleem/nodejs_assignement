@@ -69,4 +69,19 @@ blogRoute.patch("/:id",AuthenticateAuthor,async(req,res)=>{
 
 })
 
+
+// get single blog by id;
+
+blogRoute.get("/:id",async(req,res)=>{
+    const id=req.params.id;
+
+    try {
+        const oneBlog=await Blogmodel.findOne({_id:id});
+        const userData=await Usermodel.findOne({_id:oneBlog.author})
+        res.status(200).send({data:oneBlog,author:userData.name})
+        
+    } catch (error) {
+        res.status(404).send({msg:error.message})
+    }
+})
 module.exports ={blogRoute}
