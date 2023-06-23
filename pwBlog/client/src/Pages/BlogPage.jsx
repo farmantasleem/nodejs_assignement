@@ -10,7 +10,10 @@ export const BlogPage = ()=>{
     const[blogData,setBlogData]=useState([])
     const {login}=useContext(userInfo)
     const getData=async()=>{
-        const resp=await fetch(`${HOST}/blog/`)
+        const resp=await fetch(`${HOST}/blog/myblog/${localStorage.getItem("userId")}`,{
+            method:"GET",
+            headers:{"authorization":`bearer ${localStorage.getItem("userId")}`}
+        })
         const {data}=await resp.json();
         setBlogData(data)
         console.log(data)
@@ -18,16 +21,19 @@ export const BlogPage = ()=>{
     }
 
     useEffect(()=>{
-        // getData()
+        getData()
         console.log(login)
     },[])
 
         return(
             <div id="myBlog">
-              <BlogAuthor/>
-              <BlogAuthor/>
-              <BlogAuthor/>
-              <BlogAuthor/>
+           {
+            blogData.map((e)=>{
+               return <BlogAuthor data={e}/>
+            })
+
+           }
+        
                 
             </div>
         )

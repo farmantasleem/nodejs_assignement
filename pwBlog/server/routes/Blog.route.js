@@ -84,4 +84,19 @@ blogRoute.get("/:id",async(req,res)=>{
         res.status(404).send({msg:error.message})
     }
 })
+
+
+// get my blog
+
+blogRoute.get("/myblog/:id",userValidation ,async(req,res)=>{
+    const authorId=req.params.id
+    try {
+        const allBlogs=await Blogmodel.find({author:authorId});
+        res.status(200).send({data:allBlogs})
+        
+    } catch (error) {
+        res.status(501).send({msg:error.message})
+    }
+
+})
 module.exports ={blogRoute}

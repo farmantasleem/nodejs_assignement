@@ -5,6 +5,7 @@ const userValidation =async(req,res,next)=>{
     if(userId){
         const userData=await Usermodel.findOne({_id:userId});
         if(userData && userData.name?.length>0){
+            req.body.userId=userId
             next()
         }else{
             res.status(403).send({msg:"User not Found"})
