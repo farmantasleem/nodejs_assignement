@@ -2,10 +2,30 @@ import React, { useState } from "react";
 
 import "./editModal.css";
 
-export const EditModal = ({edit,setEdit})=>{
-    const[data,setData]=useState({title:"",img:"",desc:"",content:""})
-    const handleClick=()=>{
-        console.log(data)
+export const EditModal = ({edit,setEdit,dataPrev})=>{
+    const[data,setData]=useState({...dataPrev})
+    const HOST="http://localhost:8081"
+    const handleClick=async()=>{
+       try {
+        const resp=await fetch(`${HOST}/blog/${data._id}`,{
+            method:"PATCH",
+            headers:{
+                "content-type":"application/json",
+                "authorization":`bearer ${localStorage.getItem("userId")}`
+            },
+            body:JSON.stringify(data)
+        })
+
+        const data1=await resp.json();
+        alert(data1.msg)
+        window.location.reload();
+
+        
+       } catch (error) {
+            alert(error.message)
+       }
+
+
     }
     return(
         <div id="EditModal" style={{display:edit?"none":"flex"}} >

@@ -23,6 +23,7 @@ main{
   grid-template-columns: 340px 340px 340px;
   gap: 10px;
   padding: 20px;
+  grid-template-rows: auto;
   justify-content: center;
 }
 body{
@@ -34,14 +35,15 @@ body{
   color: silver;
   height: 430px;
   font-size: 17px;
+
   overflow: hidden;
   text-align: center;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
   justify-content: center;
 }
 .myBlog{
-  height: 500px;
+  height: 550px;
 }
 .storyCard button{
   background-color: rgb(236,81,49);
@@ -55,7 +57,7 @@ body{
   font-size: 17px;
 }
 .storyCard img{
-  width: 250px;
+  width: 290px;
   height: 200px;
 }
 
@@ -71,5 +73,13 @@ body{
   max-height: 100px;
   overflow: hidden;
   overflow-y: scroll;
+  min-height: 100px;
 
+}
+
+
+.storyCard h1{
+  min-height: 40px;
+  padding: 5px;
+  max-height: 40px;
 }

@@ -2,25 +2,35 @@ import React, { useEffect, useState } from "react";
 
 import "./readblog.css"
 import { useParams } from "react-router-dom";
+import { StoryCard } from "../Component/Story/StoryCard";
 
 export const ReadBlog = ()=>{
     const {id}=useParams()
     const HOST="http://localhost:8081"
 
     const[blogData,setBlogData]=useState({})
+    const[allblogData,setallblogData]=useState([])
     const getData=async()=>{
-          const resp=await fetch(`${HOST}/blog/${id}`)
-          const {data,author}=await resp.json();
-          setBlogData({...data,author})
-          console.log(data)
+        try {
+            const resp=await fetch(`${HOST}/blog/${id}`)
+            const blogResp=await fetch(`${HOST}/blog`)
+            const blogRespData=await blogResp.json()
+            setallblogData(blogRespData.data)
+            const {data,author}=await resp.json();
+            setBlogData({...data,author})
+           
+        } catch (error) {
+            alert(error.message)
+        }
     
       }
     
       useEffect(()=>{
         getData()
-      },[])
+      },[blogData])
     return(
-        <div id="Readblog">
+        <div id="parentReadBlog" style={{display:"flex",padding:"20px"}}>
+            <div id="Readblog">
             <img src={blogData?.img} />
             <h1 behavior="" direction="">{blogData?.title}</h1>
 
@@ -33,6 +43,16 @@ export const ReadBlog = ()=>{
                         {blogData?.content}
                     </p>
             </div>
+             </div>
+             
+             <div id="sidebar" style={{display:"flex",flexDirection:"column",gap:"05px"}}>
+             <h1 style={{color:"white",fontFamily:"sans-serif"}}>You May Also Like</h1>
+                {
+                    allblogData.map((e)=>{
+                        return <StoryCard data={e}/>
+                    })
+                }
+             </div>
         </div>
     )
 }

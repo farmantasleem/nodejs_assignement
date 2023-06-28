@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { StoryCard } from "./Component/Story/StoryCard";
-import { Addblog } from "./Pages/AddBlog";
-import { User } from "./Pages/User";
+
 
 function App() {
   const HOST="http://localhost:8081"
 
   const[blogData,setBlogData]=useState([])
-const getData=async()=>{
-      const resp=await fetch(`${HOST}/blog/`)
-      const {data}=await resp.json();
-      setBlogData(data)
-      console.log(data)
+  const getData=async()=>{
+     try { const resp=await fetch(`${HOST}/blog/`)
+     const {data}=await resp.json();
+     setBlogData(data)
+      
+     } catch (error) {
+        console.log(error.message)
+     }
+    
 
   }
 
@@ -20,7 +23,7 @@ const getData=async()=>{
     getData()
   },[])
   return (
-    <div className="parent">
+    <div className="parent homepage">
     
       <main>
        {    

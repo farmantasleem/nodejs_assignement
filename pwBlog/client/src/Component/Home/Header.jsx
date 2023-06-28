@@ -9,6 +9,12 @@ export const Header = () => {
     const {login,setlogin} = useContext(userInfo);
 
 
+    const logOut = ()=>{
+        setlogin(false)
+        localStorage.removeItem("userId")
+        alert("You have been logged Out Successfully")
+    }
+
     useEffect(()=>{
         let userId=localStorage.getItem("userId");
         if(userId){
@@ -28,9 +34,10 @@ export const Header = () => {
                 <button>Login/Register</button>
             </NavLink>
             <NavLink hidden={!login} to={"/myblog"}><button>MyBlog</button></NavLink>
+          <button hidden={!login} onClick={logOut} style={{color:"white"}}>LogOut</button>
         
 
-            <button id="welcome">Welcome, Guest</button>
+            <button id="welcome">Welcome</button>
         </header>
     )
 }

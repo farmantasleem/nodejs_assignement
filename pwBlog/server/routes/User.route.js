@@ -9,7 +9,7 @@ const userRoute = express.Router();
 userRoute.post("/login", loginValidate, async (req, res) => {
   const { email, password } = req.body;
 
-  const userData = await Usermodel.findOne({ email });
+  const userData = await Usermodel.findOne({ email })||{};
 
   if (userData&&userData.password?.length>0) {
     if (userData.password == password) {
