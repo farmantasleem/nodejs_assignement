@@ -25,4 +25,19 @@ const userSchema  = mongoose.schema({
         }
 })
 
+// method to generate token 
+userSchema.methods={
+    jwtToken(){
+        return JWT.sign({id:this._id,email:this.email},process.env.SECRET,{
+            expiresIN:'24h'
+        })
+    }
+}
+
+// to hash password before saving it
+userSchema.pre("save",async(next)=>{
+    if (!this.isModified('password')) return next();
+    this.password = await bcrypt.hash(this.password, 10); //hashing password
+    return next();
+})
 const UserModel = mongoose.model("user",userSchema)
