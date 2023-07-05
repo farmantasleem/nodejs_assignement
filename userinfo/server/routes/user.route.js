@@ -10,3 +10,8 @@ const userRoute = express.Router();
 userRoute.post("/signup",signupValidator,userSignUp);
 
 userRoute.post("/login",loginValidator,userLogin)
+
+
+module.exports ={
+    userRoute
+}
