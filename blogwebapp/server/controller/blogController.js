@@ -29,4 +29,41 @@ const createBlog =async(req,res) => {
     }
 }
 
-module.exports =  { getBlog,createBlog}
+// get single blog
+
+const getSingleBlog = async(req,res) => {
+    const blogId = req.params.blogID
+
+    try {
+        console.log(blogId)
+        const getData = await BlogModel.findOne({_id:blogId})
+        if(getData){
+            res.status(200).send(getData)
+        }else{
+            res.status(404).send({msg:"Blog not Found"})
+        }
+    } catch (error) {
+        res.status(501).send({msg:"Invalid Id, Blog could not Found"})
+
+    }
+}
+
+const deleteBlog =async(req,res)=>{
+    const blogId = req.params.blogID
+
+    try {
+        console.log(blogId)
+        const getData = await BlogModel.deleteOne({_id:blogId})
+        const updatedData = await BlogModel.find()
+        if(getData){
+            res.status(200).send({msg:"Blog has been deleted",updatedData})
+        }else{
+            res.status(404).send({msg:"Blog not Found"})
+        }
+    } catch (error) {
+        res.status(501).send({msg:"Invalid Id, Blog could not Found"})
+
+    }
+}
+
+module.exports =  { getBlog,createBlog,getSingleBlog,deleteBlog}

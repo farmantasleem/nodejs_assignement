@@ -4,7 +4,7 @@ const { connectDatabase } = require("./config/dbConnection");
 require("dotenv").config()
 const app = express()
 app.use(express.json())
-
+app.use(require("cors")())
 
 app.get("/",(req,res)=>{
     res.status(200).send({msg:"Server is running..!"})
